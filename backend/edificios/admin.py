@@ -13,7 +13,7 @@ admin.site.register(Locatario, Locatarios)
 
 
 class Apartamentos(admin.ModelAdmin):
-    list_display = ('id', 'numero_apartamento', 'descricao', 'bloco')
+    list_display = ('id', 'numero_apartamento', 'descricao', 'bloco', 'status')
     list_display_links = ('id', 'numero_apartamento')
     search_fields = ('numero_apartamento',)
 
