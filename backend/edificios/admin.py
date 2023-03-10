@@ -1,5 +1,5 @@
 from django.contrib import admin
-from edificios.models import Locatario, Apartamento, Locado
+from edificios.models import Locatario, Apartamento, Locado, Edificio
 
 
 class Locatarios(admin.ModelAdmin):
@@ -13,7 +13,8 @@ admin.site.register(Locatario, Locatarios)
 
 
 class Apartamentos(admin.ModelAdmin):
-    list_display = ('id', 'numero_apartamento', 'descricao', 'bloco', 'status')
+    list_display = ('id', 'numero_apartamento', 'descricao',
+                    'bloco', 'status', 'edificio')
     list_display_links = ('id', 'numero_apartamento')
     search_fields = ('numero_apartamento',)
 
@@ -27,3 +28,12 @@ class Alocado(admin.ModelAdmin):
 
 
 admin.site.register(Locado, Alocado)
+
+
+class Edificios(admin.ModelAdmin):
+    list_display = ('id', 'nome', 'endereco', 'numero_apartamento')
+    list_display_links = ('id', 'nome')
+    search_fields = ('nome',)
+
+
+admin.site.register(Edificio, Edificios)
