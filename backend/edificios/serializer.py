@@ -1,5 +1,11 @@
 from rest_framework import serializers
-from edificios.models import Locatario, Apartamento, Locado
+from edificios.models import Locatario, Apartamento, Locado, Edificio
+
+
+class EdificioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Edificio
+        fields = '__all__'
 
 
 class LocatorioSerializer(serializers.ModelSerializer):
